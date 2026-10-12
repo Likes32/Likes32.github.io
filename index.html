@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Павел — веб-дизайнер: сайты для баз отдыха и глэмпингов</title>
+<meta name="description" content="Делаю сайты для баз отдыха, глэмпингов и небольшого бизнеса. Лендинг от 15 000 ₽ и от 3 дней. Первый экран вашего сайта — бесплатно.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Павел — веб-дизайнер">
+<meta property="og:description" content="Сайты для баз отдыха, глэмпингов и небольшого бизнеса. Лендинг от 15 000 ₽, первый экран — бесплатно.">
+<meta property="og:url" content="https://likes32.github.io/">
+<meta property="og:image" content="https://likes32.github.io/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://likes32.github.io/">
+<meta name="theme-color" content="#E9ECE8">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Шрифты: Unbounded — заголовки Павла, Onest — текст, Mono — подписи.
+   Остальные гарнитуры — родные шрифты проектов, только для их названий. */
+@font-face{font-family:Unbounded;src:url(fonts/unbounded-cyrillic.woff2) format('woff2');font-weight:300 800;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Unbounded;src:url(fonts/unbounded-latin.woff2) format('woff2');font-weight:300 800;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+20BD,U+2122,U+2191,U+2193,U+2197,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Onest;src:url(fonts/onest-cyrillic.woff2) format('woff2');font-weight:100 900;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Onest;src:url(fonts/onest-latin.woff2) format('woff2');font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+20BD,U+2122,U+2191,U+2193,U+2197,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Mono;src:url(fonts/mono-cyrillic.woff2) format('woff2');font-weight:100 800;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Mono;src:url(fonts/mono-latin.woff2) format('woff2');font-weight:100 800;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2197,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Yeseva;src:url(fonts/yeseva-cyrillic.woff2) format('woff2');font-display:swap;unicode-range:U+0400-045F}
+@font-face{font-family:Yeseva;src:url(fonts/yeseva-latin.woff2) format('woff2');font-display:swap;unicode-range:U+0000-00FF}
+@font-face{font-family:Marck;src:url(fonts/marck-cyrillic.woff2) format('woff2');font-display:swap;unicode-range:U+0400-045F}
+@font-face{font-family:Marck;src:url(fonts/marck-latin.woff2) format('woff2');font-display:swap;unicode-range:U+0000-00FF}
+@font-face{font-family:Oswald;src:url(fonts/oswald-cyrillic.woff2) format('woff2');font-weight:200 700;font-display:swap;unicode-range:U+0400-045F}
+@font-face{font-family:Oswald;src:url(fonts/oswald-latin.woff2) format('woff2');font-weight:200 700;font-display:swap;unicode-range:U+0000-00FF}
+@font-face{font-family:Cormorant;src:url(fonts/cormorant-cyrillic.woff2) format('woff2');font-weight:300 700;font-display:swap;unicode-range:U+0400-045F}
+@font-face{font-family:Cormorant;src:url(fonts/cormorant-latin.woff2) format('woff2');font-weight:300 700;font-display:swap;unicode-range:U+0000-00FF}
+@font-face{font-family:Playfair;src:url(fonts/playfair-cyrillic.woff2) format('woff2');font-weight:400 900;font-display:swap;unicode-range:U+0400-045F}
+@font-face{font-family:Playfair;src:url(fonts/playfair-latin.woff2) format('woff2');font-weight:400 900;font-display:swap;unicode-range:U+0000-00FF}
+
+/* Палитры. base — собственная Павла: холодный лишайник и ель.
+   Остальные — палитры самих проектов: страница перекрашивается, пока вы смотрите работу. */
+:root{
+  --bg:#E9ECE8; --fg:#171B19; --muted:#56605A; --line:rgba(23,27,25,.15);
+  --accent:#2F5D50; --on-accent:#F3F5F1; --card:#F3F5F1;
+  --f-display:Unbounded,'Arial Black',sans-serif; --f-body:Onest,system-ui,-apple-system,'Segoe UI',sans-serif; --f-mono:Mono,ui-monospace,Consolas,monospace;
+  --pad:clamp(16px,4.2vw,64px); --max:1320px;
+}
+body[data-theme="krasota"]{--bg:#FCF5F0;--fg:#2C2523;--muted:#76655F;--line:rgba(44,37,35,.14);--accent:#9E3248;--on-accent:#fff;--card:#fff}
+body[data-theme="baf"]{--bg:#0B0B0C;--fg:#F4F2EF;--muted:#A19C97;--line:#2B2B2E;--accent:#E2333A;--on-accent:#fff;--card:#161618}
+body[data-theme="nochnik"]{--bg:#0D130F;--fg:#E8E3D6;--muted:#97A08F;--line:#24312A;--accent:#F0B54A;--on-accent:#1A1408;--card:#16211A}
+body[data-theme="kosa"]{--bg:#14110C;--fg:#ECE5D7;--muted:#AEA48F;--line:rgba(236,229,215,.16);--accent:#D79A44;--on-accent:#1A1309;--card:#221C15}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;transition:background-color .7s ease,color .7s ease}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.mono{font:500 13px/1.3 var(--f-mono);letter-spacing:.12em;text-transform:uppercase}
+
+/* Кнопки */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font:600 16px/1 var(--f-body);text-decoration:none;transition:transform .2s ease,background-color .7s ease,color .7s ease,border-color .7s ease}
+.btn--main{background:var(--accent);color:var(--on-accent)}
+.btn--ghost{border:1.5px solid var(--line);color:var(--fg)}
+.btn:hover{transform:translateY(-2px)}
+
+/* Шапка */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:background-color .7s ease,border-color .7s ease}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.logo{font:700 19px/1 var(--f-display);text-decoration:none;letter-spacing:-.01em}
+.logo small{display:block;margin-top:5px;font:500 10.5px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{text-decoration:none;font-size:15px;color:var(--muted)}
+.nav a:hover{color:var(--fg)}
+.nav .btn{padding:12px 20px;font-size:14px;color:var(--on-accent);gap:0}
+
+/* Первый экран */
+.hero{padding:clamp(40px,7vw,96px) 0 clamp(56px,8vw,120px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero .mono{color:var(--muted)}
+.hero h1{margin-top:22px;font:600 clamp(36px,4.9vw,70px)/1.04 var(--f-display);letter-spacing:-.025em;text-wrap:balance}
+.hero p.lead{margin-top:26px;max-width:560px;font-size:clamp(17px,1.5vw,20px);color:var(--muted);text-wrap:pretty}
+.hero p.lead b{color:var(--fg);font-weight:600}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* Сигнатура: четыре арочных окна — по одному на работу */
+.windows{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,16px);align-items:end}
+.win{position:relative;display:block;text-decoration:none;transform:translateY(calc(var(--lift) * -1));transition:transform .35s ease}
+.win:hover{transform:translateY(calc(var(--lift) * -1 - 8px))}
+.win .glass{display:block;aspect-ratio:9/19;border-radius:999px 999px 14px 14px;overflow:hidden;background:var(--card);box-shadow:0 22px 48px rgba(20,24,22,.18)}
+.win img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
+.win .cap{display:block;margin-top:12px;font:500 11px/1.25 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center}
+
+/* Работы */
+.works-head{padding:clamp(48px,6vw,88px) 0 8px;border-top:1px solid var(--line)}
+.works-head .wrap{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+h2{font:600 clamp(30px,4vw,56px)/1.05 var(--f-display);letter-spacing:-.02em}
+.works-head .mono{color:var(--muted)}
+
+.case{padding:clamp(56px,8vw,120px) 0}
+.case .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center}
+.case:nth-of-type(even) .case__text{order:2}
+.case__text .mono{color:var(--accent);transition:color .7s ease}
+.case__title{margin-top:18px;line-height:.98;letter-spacing:-.01em;text-wrap:balance}
+.case__lead{margin-top:18px;font-size:19px;color:var(--fg);max-width:520px;text-wrap:pretty}
+.facts{margin-top:26px;display:grid;gap:14px}
+.facts div{display:grid;grid-template-columns:118px 1fr;gap:14px;padding-top:14px;border-top:1px solid var(--line);transition:border-color .7s ease}
+.facts dt{font:500 12px/1.6 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.facts dd{font-size:16px;line-height:1.55}
+.case .link{display:inline-flex;margin-top:28px;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:3px;transition:border-color .7s ease}
+
+.case__media{position:relative;padding-bottom:clamp(40px,5vw,72px)}
+.desk{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card);box-shadow:0 30px 70px rgba(0,0,0,.22)}
+.bar{height:34px;display:flex;align-items:center;padding:0 14px;background:var(--card);border-bottom:1px solid var(--line)}
+.bar span{font:500 12px/1 var(--f-mono);color:var(--muted);letter-spacing:.02em}
+.desk img{width:100%;height:auto;aspect-ratio:16/10}
+.phone{position:absolute;right:clamp(-8px,-1vw,0px);bottom:0;width:22%;min-width:96px;padding:6px;border-radius:30px;background:#0b0b0c;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.phone img{border-radius:24px;width:100%;height:auto;aspect-ratio:390/844}
+.case:nth-of-type(even) .phone{right:auto;left:clamp(-8px,-1vw,0px)}
+
+/* Названия проектов — их собственными шрифтами */
+.t-krasota{font:400 clamp(44px,5.4vw,80px)/1 Yeseva,Georgia,serif}
+.t-krasota span{display:block;margin-left:.6em;font:400 .8em/1.1 Marck,cursive;color:#E77E93}
+.t-baf{font:700 clamp(72px,10vw,150px)/.9 Oswald,'Arial Narrow',sans-serif;text-transform:uppercase}
+.t-nochnik{font:400 clamp(64px,8.4vw,128px)/.95 Cormorant,Georgia,serif}
+.t-kosa{font:700 clamp(46px,5.6vw,84px)/1 Playfair,Georgia,serif}
+.t-kosa span{color:#E8D3A6}
+
+/* Как работаю */
+.how{padding:clamp(64px,8vw,120px) 0;border-top:1px solid var(--line)}
+.steps{list-style:none;margin-top:44px;display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.6vw,24px);counter-reset:s}
+.steps li{counter-increment:s;padding:22px 20px 24px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--on-accent);font:600 15px/1 var(--f-display)}
+.steps h3{margin-top:18px;font:600 17px/1.25 var(--f-display);letter-spacing:-.01em}
+.steps p{margin-top:8px;font-size:15px;line-height:1.5;color:var(--muted)}
+.steps li.free{background:var(--accent);color:var(--on-accent);border-color:transparent}
+.steps li.free::before{background:var(--on-accent);color:var(--accent)}
+.steps li.free p{color:var(--on-accent);opacity:.88}
+
+/* Форматы и цена */
+.formats{padding:0 0 clamp(64px,8vw,120px)}
+.cards{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.6vw,24px)}
+.card{padding:28px 26px 30px;border-radius:20px;border:1px solid var(--line);background:var(--card)}
+.card h3{font:600 21px/1.2 var(--f-display);letter-spacing:-.01em}
+.card p{margin-top:12px;font-size:16px;line-height:1.55;color:var(--muted)}
+.price{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 40px;align-items:baseline;padding-top:24px;border-top:1px solid var(--line)}
+.price b{font:600 clamp(26px,3vw,40px)/1 var(--f-display);letter-spacing:-.02em}
+.price span{color:var(--muted)}
+
+/* Контакты */
+.contact{padding:clamp(72px,9vw,140px) 0;border-top:1px solid var(--line)}
+.contact h2{max-width:900px;text-wrap:balance}
+.contact p{margin-top:20px;max-width:620px;font-size:19px;color:var(--muted)}
+.contact .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.foot{padding:28px 0 40px;border-top:1px solid var(--line)}
+.foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted)}
+
+/* Адаптив */
+@media (max-width:1080px){
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .steps li:last-child{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .nav a:not(.btn){display:none}
+  .hero .wrap,.case .wrap{grid-template-columns:1fr}
+  .case:nth-of-type(even) .case__text{order:0}
+  .windows{max-width:560px;margin-top:72px}
+  .cards{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .top .wrap{height:60px}
+  .nav .btn{padding:10px 16px;font-size:14px}
+  .nav .btn .long{display:none}
+  .hero .actions .btn{flex:1 1 100%;justify-content:center}
+  .contact .actions .btn{flex:1 1 100%;justify-content:center}
+  .facts div{grid-template-columns:1fr;gap:4px}
+  .steps{grid-template-columns:1fr}
+  .win .cap{font-size:9.5px;letter-spacing:.06em}
+  .phone{width:26%}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body data-theme="base">
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Павел<small>веб-дизайнер</small></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#works">Работы</a>
+      <a href="#how">Как работаю</a>
+      <a href="#formats">Цены</a>
+      <a class="btn btn--main" href="https://t.me/likespav" target="_blank" rel="noopener"><span class="long">Написать в&nbsp;</span>Telegram</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" data-theme="base">
+    <div class="wrap">
+      <div>
+        <p class="mono">Веб-дизайн · сайты без конструктора</p>
+        <h1>Сайты для баз отдыха и глэмпингов</h1>
+        <p class="lead">И для студий, школ, всех, кому нужен понятный сайт. Лендинг — <b>от 15&nbsp;000&nbsp;₽</b> и от 3 дней. <b>Первый экран вашего сайта нарисую бесплатно</b> — после короткого брифа.</p>
+        <div class="actions">
+          <a class="btn btn--main" href="https://t.me/likespav" target="_blank" rel="noopener">Написать в Telegram</a>
+          <a class="btn btn--ghost" href="#works">Смотреть работы ↓</a>
+        </div>
+      </div>
+      <div class="windows" aria-label="Работы">
+        <a class="win" href="#krasota" style="--lift:0px"><span class="glass"><img src="img/krasota-phone.webp" alt="Сайт «Красота с любовью»" width="560" height="1212"></span><span class="cap">Красота</span></a>
+        <a class="win" href="#baf" style="--lift:36px"><span class="glass"><img src="img/baf-phone.webp" alt="Сайт школы «БАФ»" width="560" height="1212"></span><span class="cap">БАФ</span></a>
+        <a class="win" href="#nochnik" style="--lift:12px"><span class="glass"><img src="img/nochnik-phone.webp" alt="Концепт «Ночник»" width="560" height="1212"></span><span class="cap">Ночник</span></a>
+        <a class="win" href="#kosa" style="--lift:48px"><span class="glass"><img src="img/kosa-phone.webp" alt="Концепт «Куршская коса»" width="560" height="1212"></span><span class="cap">Коса</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="works-head" id="works" data-theme="base">
+    <div class="wrap">
+      <h2>Работы</h2>
+      <p class="mono">2 проекта для заказчиков · 2 концепта</p>
+    </div>
+  </div>
+
+  <section class="case" id="krasota" data-theme="krasota">
+    <div class="wrap">
+      <div class="case__text">
+        <p class="mono">Проект для заказчика · Гатчина</p>
+        <h3 class="case__title t-krasota">Красота <span>с любовью</span></h3>
+        <p class="case__lead">Сайт бьюти-коворкинга: услуги, аренда мест для мастеров, запись онлайн.</p>
+        <dl class="facts">
+          <div><dt>Задача</dt><dd>Собрать настоящий сайт по референсу, который клиент нарисовал в ИИ-чате.</dd></div>
+          <div><dt>Сделал</dt><dd>4 страницы, тарифы аренды с реальными ценами, запись через DIKIDI, фото студии, карта.</dd></div>
+          <div><dt>Внутри</dt><dd>HTML, CSS, JavaScript без конструктора · адаптив · WebP · SEO-основа</dd></div>
+        </dl>
+        <a class="link" href="https://likes32.github.io/Krasota/" target="_blank" rel="noopener">Открыть сайт ↗</a>
+      </div>
+      <div class="case__media">
+        <figure class="desk"><div class="bar"><span>likes32.github.io/Krasota</span></div><img src="img/krasota-desk.webp" alt="Главная страница «Красота с любовью» на компьютере" width="1440" height="900" loading="lazy"></figure>
+        <figure class="phone"><img src="img/krasota-phone.webp" alt="Та же страница на телефоне" width="560" height="1212" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case" id="baf" data-theme="baf">
+    <div class="wrap">
+      <div class="case__text">
+        <p class="mono">Проект для заказчика · Санкт-Петербург</p>
+        <h3 class="case__title t-baf">БАФ</h3>
+        <p class="case__lead">Лендинг школы дрессировки собак с заявкой на занятие.</p>
+        <dl class="facts">
+          <div><dt>Задача</dt><dd>Показать подход кинолога и привести людей на занятие.</dd></div>
+          <div><dt>Сделал</dt><dd>4 формата занятий, цены, отзывы, блок о кинологе, фото и видео.</dd></div>
+          <div><dt>Внутри</dt><dd>HTML, CSS, JavaScript · мобильное меню · свой домен</dd></div>
+        </dl>
+        <a class="link" href="https://baf-dog.ru/" target="_blank" rel="noopener">Открыть сайт ↗</a>
+      </div>
+      <div class="case__media">
+        <figure class="desk"><div class="bar"><span>baf-dog.ru</span></div><img src="img/baf-desk.webp" alt="Лендинг «БАФ» на компьютере" width="1440" height="900" loading="lazy"></figure>
+        <figure class="phone"><img src="img/baf-phone.webp" alt="Лендинг «БАФ» на телефоне" width="560" height="1212" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case" id="nochnik" data-theme="nochnik">
+    <div class="wrap">
+      <div class="case__text">
+        <p class="mono">Концепт</p>
+        <h3 class="case__title t-nochnik">Ночник</h3>
+        <p class="case__lead">Лендинг дома отдыха в лесу: тишина, баня, купель и свет в окне.</p>
+        <dl class="facts">
+          <div><dt>Идея</dt><dd>Дом в тёмном лесу со светящимся окном и есть ночник — отсюда палитра и логотип.</dd></div>
+          <div><dt>Сделал</dt><dd>Три интерактивных плана дома и участка, календарь выбора дат.</dd></div>
+          <div><dt>Внутри</dt><dd>HTML, CSS, JavaScript · планы доступны с клавиатуры</dd></div>
+        </dl>
+        <a class="link" href="https://likes32.github.io/Nochnik/" target="_blank" rel="noopener">Открыть сайт ↗</a>
+      </div>
+      <div class="case__media">
+        <figure class="desk"><div class="bar"><span>likes32.github.io/Nochnik</span></div><img src="img/nochnik-desk.webp" alt="Концепт «Ночник» на компьютере" width="1440" height="900" loading="lazy"></figure>
+        <figure class="phone"><img src="img/nochnik-phone.webp" alt="Концепт «Ночник» на телефоне" width="560" height="1212" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case" id="kosa" data-theme="kosa">
+    <div class="wrap">
+      <div class="case__text">
+        <p class="mono">Концепт</p>
+        <h3 class="case__title t-kosa">Куршская <span>коса</span></h3>
+        <p class="case__lead">Тревел-лендинг о нацпарке: 98 километров песка между морем и небом.</p>
+        <dl class="facts">
+          <div><dt>Идея</dt><dd>Показать нацпарк так, чтобы захотелось поехать.</dd></div>
+          <div><dt>Сделал</dt><dd>Живой первый экран: параллакс, частицы, заголовок по словам. Галерея и маршрут.</dd></div>
+          <div><dt>Внутри</dt><dd>HTML, CSS, JavaScript · GSAP · плавный скролл</dd></div>
+        </dl>
+        <a class="link" href="https://likes32.github.io/Kosa/" target="_blank" rel="noopener">Открыть сайт ↗</a>
+      </div>
+      <div class="case__media">
+        <figure class="desk"><div class="bar"><span>likes32.github.io/Kosa</span></div><img src="img/kosa-desk.webp" alt="Концепт «Куршская коса» на компьютере" width="1440" height="900" loading="lazy"></figure>
+        <figure class="phone"><img src="img/kosa-phone.webp" alt="Концепт «Куршская коса» на телефоне" width="560" height="1212" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how" data-theme="base">
+    <div class="wrap">
+      <h2>Как работаю</h2>
+      <ol class="steps">
+        <li><h3>Бриф</h3><p>3–4 вопроса о вашем месте и пара фото.</p></li>
+        <li class="free"><h3>Первый экран — бесплатно</h3><p>Рисую первый экран вашего сайта. Не понравится — макет останется у вас.</p></li>
+        <li><h3>Цена и срок</h3><p>Согласуем объём: от 15&nbsp;000&nbsp;₽, от 3 дней до 1,5 недель.</p></li>
+        <li><h3>Сайт</h3><p>Делаю остальные блоки, правим по вашим замечаниям.</p></li>
+        <li><h3>Запуск</h3><p>Готовый сайт на хостинге или архивом для загрузки.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="formats" id="formats" data-theme="base">
+    <div class="wrap">
+      <h2>Три формата</h2>
+      <div class="cards">
+        <article class="card"><h3>Лендинг-визитка</h3><p>Одна страница: дом или услуги, фото, цены, как добраться и кнопка «написать» или «забронировать».</p></article>
+        <article class="card"><h3>Многостраничный сайт</h3><p>Отдельные страницы под номера, услуги, цены и контакты — как у «Красоты с любовью».</p></article>
+        <article class="card"><h3>Редизайн</h3><p>Сайт есть, но устарел или неудобен с телефона. Переделаю, сохранив то, что работает.</p></article>
+      </div>
+      <div class="price"><b>от 15&nbsp;000&nbsp;₽</b><span>Срок — от 3 дней до 1,5 недель. Точные цифры — после брифа.</span></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" data-theme="base">
+    <div class="wrap">
+      <h2>Расскажите о своём месте — покажу, каким может быть его сайт</h2>
+      <p>Пишите в Telegram или ВКонтакте. Отвечу, пришлю бриф, и начнём с бесплатного первого экрана.</p>
+      <div class="actions">
+        <a class="btn btn--main" href="https://t.me/likespav" target="_blank" rel="noopener">Telegram @likespav</a>
+        <a class="btn btn--ghost" href="https://vk.ru/likes002" target="_blank" rel="noopener">ВКонтакте</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap mono"><span>Павел · веб-дизайнер</span><span>© <span id="y">2026</span></span></div>
+</footer>
+
+<script>
+// Страница перекрашивается в палитру той работы, что сейчас в центре экрана.
+(function(){
+  var zones=document.querySelectorAll('[data-theme]:not(body)');
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting) document.body.setAttribute('data-theme', e.target.getAttribute('data-theme')); });
+  },{rootMargin:'-48% 0px -48% 0px'});
+  zones.forEach(function(z){ io.observe(z); });
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
