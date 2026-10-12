@@ -166,6 +166,8 @@ h2{font:600 clamp(30px,4vw,56px)/1.05 var(--f-display);letter-spacing:-.02em}
   .nav a:not(.btn){display:none}
   .hero .wrap,.case .wrap{grid-template-columns:1fr}
   .case:nth-of-type(even) .case__text{order:0}
+  .case__media{order:-1}
+  .case .wrap{gap:28px}
   .windows{max-width:560px;margin-top:72px}
   .cards{grid-template-columns:1fr}
 }
@@ -176,10 +178,32 @@ h2{font:600 clamp(30px,4vw,56px)/1.05 var(--f-display);letter-spacing:-.02em}
   .nav .btn .long{display:none}
   .hero .actions .btn{flex:1 1 100%;justify-content:center}
   .contact .actions .btn{flex:1 1 100%;justify-content:center}
-  .facts div{grid-template-columns:1fr;gap:4px}
-  .steps{grid-template-columns:1fr}
+  h2{font-size:28px}
+  .contact h2{font-size:26px}
+  .contact p{font-size:17px}
+  .case{padding:48px 0}
+  .case__lead{font-size:17px}
+  .facts{margin-top:18px;gap:10px}
+  .facts div{grid-template-columns:1fr;gap:2px;padding-top:10px}
+  .facts dd{font-size:15px}
+  .case .link{margin-top:20px}
+  .how{padding:56px 0}
+  .formats{padding-bottom:56px}
+  .contact{padding:64px 0}
+  .works-head{padding-top:48px}
+  .steps,.cards{margin-top:24px}
+  .steps{grid-template-columns:1fr;gap:10px}
+  /* компактные шаги: номер слева, текст справа */
+  .steps li{display:grid;grid-template-columns:34px 1fr;column-gap:14px;padding:16px 16px 18px;border-radius:16px}
+  .steps li::before{grid-row:1/span 2}
+  .steps h3{margin-top:5px;font-size:16px}
+  .steps p{margin-top:4px;grid-column:2}
+  .card{padding:20px 20px 22px}
+  .card h3{font-size:18px}
+  .card p{font-size:15px}
   .win .cap{font-size:9.5px;letter-spacing:.06em}
-  .phone{width:26%}
+  .phone,.case:nth-of-type(even) .phone{width:24%;left:auto;right:-6px;padding:4px;border-radius:20px}
+  .phone img{border-radius:16px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -207,7 +231,7 @@ h2{font:600 clamp(30px,4vw,56px)/1.05 var(--f-display);letter-spacing:-.02em}
       <div>
         <p class="mono">Веб-дизайн · сайты без конструктора</p>
         <h1>Понятные сайты для малого бизнеса</h1>
-        <p class="lead">Лендинги и многостраничные сайты для студий, школ, мест отдыха — всех, кому нужен сайт, с которого легко записаться или купить. <b>От 15&nbsp;000&nbsp;₽</b> и от 3 дней. <b>Первый экран вашего сайта нарисую бесплатно</b> — после короткого брифа.</p>
+        <p class="lead">Лендинги и многостраничные сайты для студий, школ, мест отдыха — всех, кому нужен сайт, с которого легко записаться или купить. <b>От 15&nbsp;000&nbsp;₽</b> и от 3 дней. <b>Первый экран вашего сайта нарисую бесплатно</b> — после брифа.</p>
         <div class="actions">
           <a class="btn btn--main" href="https://t.me/likespav" target="_blank" rel="noopener">Написать в Telegram</a>
           <a class="btn btn--ghost" href="#works">Смотреть работы ↓</a>
@@ -313,8 +337,8 @@ h2{font:600 clamp(30px,4vw,56px)/1.05 var(--f-display);letter-spacing:-.02em}
     <div class="wrap">
       <h2>Как работаю</h2>
       <ol class="steps">
-        <li><h3>Бриф</h3><p>3–4 вопроса о вашем деле и пара фото.</p></li>
-        <li class="free"><h3>Первый экран — бесплатно</h3><p>Рисую первый экран вашего сайта. Не понравится — макет останется у вас.</p></li>
+        <li><h3>Бриф</h3><p>Рассказываете о своём деле и о том, каким видите сайт.</p></li>
+        <li class="free"><h3>Первый экран — бесплатно</h3><p>По брифу рисую первый экран вашего сайта. Не понравится — макет останется у вас.</p></li>
         <li><h3>Цена и срок</h3><p>Согласуем объём: от 15&nbsp;000&nbsp;₽, от 3 дней до 1,5 недель.</p></li>
         <li><h3>Сайт</h3><p>Делаю остальные блоки, правим по вашим замечаниям.</p></li>
         <li><h3>Запуск</h3><p>Готовый сайт на хостинге или архивом для загрузки.</p></li>
