@@ -70,7 +70,8 @@ a{color:inherit}
 .btn .ico svg{width:15px;height:15px}
 .btn:hover .ico{transform:translate(2px,-2px) scale(1.06)}
 .btn.down:hover .ico{transform:translateY(2px) scale(1.06)}
-.btn:active{transform:scale(.98)}
+.btn:active{transform:scale(.97)}
+.btn:active .ico{transform:translate(2px,-2px) scale(1.06)}
 .btn.solid{background:#fff;color:#0a0b0d}
 .btn.solid .ico{background:#0a0b0d;color:#fff}
 .btn.line{border:1px solid rgba(255,255,255,.32);color:#fff}
@@ -106,7 +107,7 @@ a{color:inherit}
 .wall img{width:clamp(260px,30vw,460px);height:auto;border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
 @keyframes drift{to{transform:translateX(-50%)}}
 .hero .shade{position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 65% at 50% 55%,rgba(7,8,10,.25),rgba(7,8,10,.86)),linear-gradient(180deg,rgba(7,8,10,0) 60%,var(--ink) 100%)}
-.panel{position:relative;width:min(820px,100%);padding:8px;border-radius:36px;transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .6s var(--ease)}
+.panel{position:relative;width:min(820px,100%);padding:8px;border-radius:36px;transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
 .panel .core{position:relative;overflow:hidden;border-radius:30px;padding:clamp(26px,4.6vw,56px)}
 .panel .core::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(460px circle at var(--mx,30%) var(--my,20%),rgba(255,255,255,.22),transparent 45%);transition:opacity .4s}
 .panel h1{margin-top:22px;font:800 clamp(38px,6.6vw,84px)/1 var(--f-display);letter-spacing:-.035em;text-wrap:balance}
@@ -131,7 +132,11 @@ a{color:inherit}
 .scene .grade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,8,10,.92) 0%,rgba(7,8,10,.62) 42%,rgba(7,8,10,.22) 100%),linear-gradient(180deg,var(--ink) 0%,rgba(7,8,10,0) 18%,rgba(7,8,10,0) 82%,var(--ink) 100%)}
 .scene.flip .grade{background:linear-gradient(270deg,rgba(7,8,10,.92) 0%,rgba(7,8,10,.62) 42%,rgba(7,8,10,.22) 100%),linear-gradient(180deg,var(--ink) 0%,rgba(7,8,10,0) 18%,rgba(7,8,10,0) 82%,var(--ink) 100%)}
 .scene .inner{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center;width:100%}
-.scene.flip .copy{order:2}
+.scene .over{position:sticky;top:0;height:100dvh;margin-top:-100dvh;display:flex;align-items:center;pointer-events:none}
+.scene .over .copy{pointer-events:auto;grid-column:1}
+.scene .stick .devices{grid-column:2}
+.scene.flip .over .copy{grid-column:2}
+.scene.flip .stick .devices{grid-column:1}
 .copy .title{margin-top:20px;line-height:.98;letter-spacing:-.01em}
 .copy .lead{margin-top:18px;font-size:clamp(16px,1.45vw,19px);color:rgba(255,255,255,.88);max-width:500px;text-wrap:pretty}
 .facts{margin-top:26px;padding:6px;border-radius:24px;max-width:520px}
@@ -142,11 +147,11 @@ a{color:inherit}
 .facts dd{font-size:15.5px;line-height:1.5}
 .copy .btn{margin-top:26px}
 .devices{position:relative;aspect-ratio:16/12}
-.devices .desk{position:absolute;left:0;top:6%;width:84%;transform:translate3d(calc(var(--px) * -16px),calc((0.5 - var(--p)) * 90px + var(--py) * -12px),0) rotate(-3deg)}
-.devices .phone{position:absolute;right:0;bottom:0;width:26%;padding:5px;border-radius:30px;transform:translate3d(calc(var(--px) * -30px),calc((0.5 - var(--p)) * 190px + var(--py) * -22px),0) rotate(5deg)}
+.devices .desk{position:absolute;left:0;top:6%;width:84%;transform:translate3d(calc(var(--px) * -16px),calc((0.5 - var(--p)) * 90px * var(--amp,1) + var(--py) * -12px),0) rotate(-3deg)}
+.devices .phone{position:absolute;right:0;bottom:0;width:26%;padding:5px;border-radius:30px;transform:translate3d(calc(var(--px) * -30px),calc((0.5 - var(--p)) * 190px * var(--amp,1) + var(--py) * -22px),0) rotate(5deg)}
 .devices .phone .core{border-radius:25px}
-.scene.flip .devices .desk{left:auto;right:0;transform:translate3d(calc(var(--px) * -16px),calc((0.5 - var(--p)) * 90px + var(--py) * -12px),0) rotate(3deg)}
-.scene.flip .devices .phone{right:auto;left:0;transform:translate3d(calc(var(--px) * -30px),calc((0.5 - var(--p)) * 190px + var(--py) * -22px),0) rotate(-5deg)}
+.scene.flip .devices .desk{left:auto;right:0;transform:translate3d(calc(var(--px) * -16px),calc((0.5 - var(--p)) * 90px * var(--amp,1) + var(--py) * -12px),0) rotate(3deg)}
+.scene.flip .devices .phone{right:auto;left:0;transform:translate3d(calc(var(--px) * -30px),calc((0.5 - var(--p)) * 190px * var(--amp,1) + var(--py) * -22px),0) rotate(-5deg)}
 .bar{display:flex;align-items:center;height:30px;padding:0 14px;background:rgba(255,255,255,.06);border-bottom:1px solid var(--line)}
 .bar span{font:500 11.5px/1 var(--f-mono);color:rgba(255,255,255,.62);letter-spacing:.02em}
 .devices img{width:100%;height:auto}
@@ -218,22 +223,34 @@ a{color:inherit}
   .nav .links,.nav>.btn{display:none}
   .burger{display:block}
   .scene{height:auto}
-  .scene .stick{position:relative;height:auto;min-height:100dvh;padding:110px 0 80px}
-  .scene .inner,.scene.flip .inner{grid-template-columns:1fr;gap:34px}
-  .scene .copy,.scene.flip .copy{order:2}
-  .scene .grade,.scene.flip .grade{background:linear-gradient(180deg,var(--ink) 0%,rgba(7,8,10,.55) 22%,rgba(7,8,10,.75) 55%,var(--ink) 100%)}
-  /* на телефоне без наклонов и перекрытий — только мягкий параллакс */
-  .devices .desk,.scene.flip .devices .desk{width:88%;transform:translate3d(0,calc((0.5 - var(--p)) * 40px),0)}
-  .devices .phone,.scene.flip .devices .phone{width:30%;transform:translate3d(0,calc((0.5 - var(--p)) * 80px),0)}
+  .scene .stick{height:100dvh;align-items:flex-start;padding-top:92px}
+  .scene .stick .inner,.scene.flip .stick .inner,.scene .over .inner,.scene.flip .over .inner{display:block}
+  .scene .over{position:relative;height:auto;margin-top:-46dvh;display:block;padding-bottom:14dvh}
+  /* текст едет поверх закреплённых макетов в стеклянной карточке — сквозь неё видно размытые слои */
+  .scene .over .copy{padding:22px 20px 24px;border-radius:28px;background:rgba(7,8,10,.5);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 30px 70px -30px rgba(0,0,0,.7)}
+  .scene .over .facts{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(255,255,255,.04);box-shadow:none}
+  .scene .grade,.scene.flip .grade{background:linear-gradient(180deg,rgba(7,8,10,.7) 0%,rgba(7,8,10,.2) 30%,rgba(7,8,10,.45) 70%,var(--ink) 100%)}
+  /* те же наклоны и глубина, что на компьютере, только амплитуда меньше */
+  .devices{aspect-ratio:16/13;--amp:.55}
+  .devices .desk,.scene.flip .devices .desk{width:86%}
+  .devices .phone,.scene.flip .devices .phone{width:30%}
+  /* когда карточка наезжает, макеты уходят вглубь — как стопка стекла */
+  .scene .stick .inner{transform:translate3d(0,calc(var(--q,0) * -34px),0) scale(calc(1 - var(--q,0) * .12));transform-origin:50% 0;opacity:calc(1 - var(--q,0) * .45)}
+  .scene .over .copy::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.10) 46%,transparent 62%);background-size:250% 100%;background-position:calc(120% - var(--q,0) * 120%) 0}
+  .scene .over .copy{position:relative}
 }
 @media (max-width:560px){
   body{font-size:16px}
-  .eyebrow{letter-spacing:.1em;font-size:10.5px}
+  .eyebrow{letter-spacing:.05em;font-size:10.5px;line-height:1.45;padding:6px 12px}
+  /* на телефоне стена работ светлее — чтобы стекло было над чем-то видно */
+  .hero .shade{background:radial-gradient(95% 55% at 50% 50%,rgba(7,8,10,.3),rgba(7,8,10,.72)),linear-gradient(180deg,rgba(7,8,10,0) 70%,var(--ink) 100%)}
   .hero{padding:100px 16px 70px;align-items:end}
   .panel{border-radius:30px}
   .panel .core{border-radius:24px}
   .panel .actions .btn{flex:1 1 100%;justify-content:space-between}
-  .wall img{width:240px}
+  .wall img{width:min(380px,96vw)}
+  .wall{gap:20px}
+  .wall .row{gap:20px}
   .facts div{grid-template-columns:1fr;gap:2px}
   .steps{grid-template-columns:1fr;gap:10px}
   .steps .core{display:grid;grid-template-columns:34px 1fr;column-gap:12px;padding:18px}
@@ -243,6 +260,8 @@ a{color:inherit}
   .bento{grid-template-columns:1fr}
   .b-land{grid-column:auto}
   .contact .actions .btn{flex:1 1 100%;justify-content:space-between}
+  .contact .wall{opacity:.75}
+  .contact .shade{background:radial-gradient(130% 60% at 50% 50%,rgba(7,8,10,.3),rgba(7,8,10,.8) 85%),linear-gradient(180deg,var(--ink) 0%,rgba(7,8,10,0) 14%,rgba(7,8,10,0) 86%,var(--ink) 100%)}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -307,6 +326,14 @@ a{color:inherit}
       <picture><source media="(max-width:860px)" srcset="img/scene-krasota-m.webp"><img class="bg" src="img/scene-krasota.webp" alt="" loading="lazy"></picture>
       <div class="grade"></div>
       <div class="wrap inner">
+        <div class="devices" data-reveal style="--d:120ms">
+          <figure class="desk bezel glass"><div class="core"><div class="bar"><span>likes32.github.io/Krasota</span></div><img src="img/krasota-desk.webp" alt="Главная страница «Красота с любовью» на компьютере" width="1440" height="900" loading="lazy"></div></figure>
+          <figure class="phone glass"><div class="core"><img src="img/krasota-phone.webp" alt="Та же страница на телефоне" width="560" height="1212" loading="lazy"></div></figure>
+        </div>
+      </div>
+    </div>
+    <div class="over">
+      <div class="wrap inner">
         <div class="copy">
           <span class="eyebrow" data-reveal><i></i>Проект для заказчика · Гатчина</span>
           <h3 class="title t-krasota" data-reveal style="--d:80ms">Красота <span>с любовью</span></h3>
@@ -318,10 +345,6 @@ a{color:inherit}
           </dl></div>
           <a class="btn line" href="https://likes32.github.io/Krasota/" target="_blank" rel="noopener" data-reveal style="--d:260ms">Открыть сайт<span class="ico"><svg><use href="#i-ne"/></svg></span></a>
         </div>
-        <div class="devices" data-reveal style="--d:120ms">
-          <figure class="desk bezel glass"><div class="core"><div class="bar"><span>likes32.github.io/Krasota</span></div><img src="img/krasota-desk.webp" alt="Главная страница «Красота с любовью» на компьютере" width="1440" height="900" loading="lazy"></div></figure>
-          <figure class="phone glass"><div class="core"><img src="img/krasota-phone.webp" alt="Та же страница на телефоне" width="560" height="1212" loading="lazy"></div></figure>
-        </div>
       </div>
     </div>
   </section>
@@ -330,6 +353,14 @@ a{color:inherit}
     <div class="stick">
       <picture><source media="(max-width:860px)" srcset="img/scene-baf-m.webp"><img class="bg" src="img/scene-baf.webp" alt="" loading="lazy"></picture>
       <div class="grade"></div>
+      <div class="wrap inner">
+        <div class="devices" data-reveal style="--d:120ms">
+          <figure class="desk bezel glass"><div class="core"><div class="bar"><span>baf-dog.ru</span></div><img src="img/baf-desk.webp" alt="Лендинг «БАФ» на компьютере" width="1440" height="900" loading="lazy"></div></figure>
+          <figure class="phone glass"><div class="core"><img src="img/baf-phone.webp" alt="Лендинг «БАФ» на телефоне" width="560" height="1212" loading="lazy"></div></figure>
+        </div>
+      </div>
+    </div>
+    <div class="over">
       <div class="wrap inner">
         <div class="copy">
           <span class="eyebrow" data-reveal><i></i>Проект для заказчика · Санкт-Петербург</span>
@@ -342,10 +373,6 @@ a{color:inherit}
           </dl></div>
           <a class="btn line" href="https://baf-dog.ru/" target="_blank" rel="noopener" data-reveal style="--d:260ms">Открыть сайт<span class="ico"><svg><use href="#i-ne"/></svg></span></a>
         </div>
-        <div class="devices" data-reveal style="--d:120ms">
-          <figure class="desk bezel glass"><div class="core"><div class="bar"><span>baf-dog.ru</span></div><img src="img/baf-desk.webp" alt="Лендинг «БАФ» на компьютере" width="1440" height="900" loading="lazy"></div></figure>
-          <figure class="phone glass"><div class="core"><img src="img/baf-phone.webp" alt="Лендинг «БАФ» на телефоне" width="560" height="1212" loading="lazy"></div></figure>
-        </div>
       </div>
     </div>
   </section>
@@ -354,6 +381,14 @@ a{color:inherit}
     <div class="stick">
       <picture><source media="(max-width:860px)" srcset="img/scene-nochnik-m.webp"><img class="bg" src="img/scene-nochnik.webp" alt="" loading="lazy"></picture>
       <div class="grade"></div>
+      <div class="wrap inner">
+        <div class="devices" data-reveal style="--d:120ms">
+          <figure class="desk bezel glass"><div class="core"><div class="bar"><span>likes32.github.io/Nochnik</span></div><img src="img/nochnik-desk.webp" alt="Концепт «Ночник» на компьютере" width="1440" height="900" loading="lazy"></div></figure>
+          <figure class="phone glass"><div class="core"><img src="img/nochnik-phone.webp" alt="Концепт «Ночник» на телефоне" width="560" height="1212" loading="lazy"></div></figure>
+        </div>
+      </div>
+    </div>
+    <div class="over">
       <div class="wrap inner">
         <div class="copy">
           <span class="eyebrow" data-reveal><i></i>Концепт</span>
@@ -366,10 +401,6 @@ a{color:inherit}
           </dl></div>
           <a class="btn line" href="https://likes32.github.io/Nochnik/" target="_blank" rel="noopener" data-reveal style="--d:260ms">Открыть сайт<span class="ico"><svg><use href="#i-ne"/></svg></span></a>
         </div>
-        <div class="devices" data-reveal style="--d:120ms">
-          <figure class="desk bezel glass"><div class="core"><div class="bar"><span>likes32.github.io/Nochnik</span></div><img src="img/nochnik-desk.webp" alt="Концепт «Ночник» на компьютере" width="1440" height="900" loading="lazy"></div></figure>
-          <figure class="phone glass"><div class="core"><img src="img/nochnik-phone.webp" alt="Концепт «Ночник» на телефоне" width="560" height="1212" loading="lazy"></div></figure>
-        </div>
       </div>
     </div>
   </section>
@@ -378,6 +409,14 @@ a{color:inherit}
     <div class="stick">
       <picture><source media="(max-width:860px)" srcset="img/scene-kosa-m.webp"><img class="bg" src="img/scene-kosa.webp" alt="" loading="lazy"></picture>
       <div class="grade"></div>
+      <div class="wrap inner">
+        <div class="devices" data-reveal style="--d:120ms">
+          <figure class="desk bezel glass"><div class="core"><div class="bar"><span>likes32.github.io/Kosa</span></div><img src="img/kosa-desk.webp" alt="Концепт «Куршская коса» на компьютере" width="1440" height="900" loading="lazy"></div></figure>
+          <figure class="phone glass"><div class="core"><img src="img/kosa-phone.webp" alt="Концепт «Куршская коса» на телефоне" width="560" height="1212" loading="lazy"></div></figure>
+        </div>
+      </div>
+    </div>
+    <div class="over">
       <div class="wrap inner">
         <div class="copy">
           <span class="eyebrow" data-reveal><i></i>Концепт</span>
@@ -389,10 +428,6 @@ a{color:inherit}
             <div><dt>Внутри</dt><dd>HTML, CSS, JavaScript · GSAP · плавный скролл</dd></div>
           </dl></div>
           <a class="btn line" href="https://likes32.github.io/Kosa/" target="_blank" rel="noopener" data-reveal style="--d:260ms">Открыть сайт<span class="ico"><svg><use href="#i-ne"/></svg></span></a>
-        </div>
-        <div class="devices" data-reveal style="--d:120ms">
-          <figure class="desk bezel glass"><div class="core"><div class="bar"><span>likes32.github.io/Kosa</span></div><img src="img/kosa-desk.webp" alt="Концепт «Куршская коса» на компьютере" width="1440" height="900" loading="lazy"></div></figure>
-          <figure class="phone glass"><div class="core"><img src="img/kosa-phone.webp" alt="Концепт «Куршская коса» на телефоне" width="560" height="1212" loading="lazy"></div></figure>
         </div>
       </div>
     </div>
@@ -487,39 +522,53 @@ a{color:inherit}
 
   if (reduce) return;
 
-  // первый экран: стекло поворачивается за курсором и бликует
-  var hero = document.querySelector('.hero'), panel = document.getElementById('panel'), core = panel.querySelector('.core');
+  // Откуда слои берут «взгляд»: мышь на компьютере; на телефоне — палец, гироскоп
+  // (Android даёт его без запроса), а без свежего ввода всё мягко «плавает» само.
+  var look = {x:0, y:0, src:'idle', last:-1e9};
+  function setLook(x, y, src){ look.x = Math.max(-.5, Math.min(.5, x)); look.y = Math.max(-.5, Math.min(.5, y)); look.src = src; look.last = performance.now(); }
   if (fine) {
-    hero.addEventListener('pointermove', function(e){
-      var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-      var c = core.getBoundingClientRect();
-      core.style.setProperty('--mx', (e.clientX - c.left) + 'px');
-      core.style.setProperty('--my', (e.clientY - c.top) + 'px');
-      panel.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg');
-      panel.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg');
-    });
-    hero.addEventListener('pointerleave', function(){ panel.style.setProperty('--rx','0deg'); panel.style.setProperty('--ry','0deg'); });
+    addEventListener('pointermove', function(e){ setLook(e.clientX / innerWidth - .5, e.clientY / innerHeight - .5, 'mouse'); }, {passive:true});
+  } else {
+    addEventListener('touchmove', function(e){ var t = e.touches[0]; if (t) setLook(t.clientX / innerWidth - .5, t.clientY / innerHeight - .5, 'touch'); }, {passive:true});
+    addEventListener('deviceorientation', function(e){
+      if (e.gamma == null || e.beta == null) return;
+      setLook(e.gamma / 50, (e.beta - 45) / 60, 'gyro');
+    }, {passive:true});
   }
 
-  // сцены работ: прогресс прокрутки и курсор → CSS-переменные (считаем только видимые сцены)
+  // первый экран: стекло наклоняется и бликует
+  var hero = document.querySelector('.hero'), panel = document.getElementById('panel'), core = panel.querySelector('.core');
+  var heroOn = true, hc = {x:0, y:0};
+  new IntersectionObserver(function(es){ heroOn = es[0].isIntersecting; }).observe(hero);
+
+  // сцены работ: прогресс прокрутки и «взгляд» → CSS-переменные (считаем только видимые сцены)
   var scenes = [].slice.call(document.querySelectorAll('.scene')), live = new Set();
   var vo = new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting ? live.add(e.target) : live.delete(e.target); }); });
-  scenes.forEach(function(s){
-    vo.observe(s);
-    s._t = {x:0, y:0}; s._c = {x:0, y:0};
-    if (fine) {
-      s.addEventListener('pointermove', function(e){ s._t.x = e.clientX / innerWidth - .5; s._t.y = e.clientY / innerHeight - .5; });
-      s.addEventListener('pointerleave', function(){ s._t.x = 0; s._t.y = 0; });
+  scenes.forEach(function(s){ vo.observe(s); s._c = {x:0, y:0}; s._copy = s.querySelector('.over .copy'); });
+  var narrow = matchMedia('(max-width:860px)');
+
+  function tick(t){
+    var tx = look.x, ty = look.y;
+    if (look.src !== 'gyro' && t - look.last > 2500) { tx = Math.sin(t / 2600) * .32; ty = Math.cos(t / 3400) * .22; }
+    if (heroOn) {
+      hc.x += (tx - hc.x) * .06; hc.y += (ty - hc.y) * .06;
+      panel.style.setProperty('--ry', (hc.x * 11).toFixed(2) + 'deg');
+      panel.style.setProperty('--rx', (-hc.y * 8).toFixed(2) + 'deg');
+      core.style.setProperty('--mx', ((.5 + hc.x * 1.4) * 100).toFixed(1) + '%');
+      core.style.setProperty('--my', ((.35 + hc.y * 1.4) * 100).toFixed(1) + '%');
     }
-  });
-  function tick(){
     live.forEach(function(s){
       var r = s.getBoundingClientRect();
       var p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight + r.height)));
-      s._c.x += (s._t.x - s._c.x) * .08; s._c.y += (s._t.y - s._c.y) * .08;
+      s._c.x += (tx - s._c.x) * .07; s._c.y += (ty - s._c.y) * .07;
       s.style.setProperty('--p', p.toFixed(4));
       s.style.setProperty('--px', s._c.x.toFixed(4));
       s.style.setProperty('--py', s._c.y.toFixed(4));
+      // телефон: насколько карточка с текстом наехала на макеты (0 — внизу, 1 — закрыла)
+      if (narrow.matches) {
+        var q = Math.min(1, Math.max(0, (innerHeight * .6 - s._copy.getBoundingClientRect().top) / (innerHeight * .45)));
+        s.style.setProperty('--q', q.toFixed(4));
+      }
     });
     requestAnimationFrame(tick);
   }
